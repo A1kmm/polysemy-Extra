@@ -1,11 +1,10 @@
-cabal-version: 1.12
-
--- This file has been generated from package.yaml by hpack version 0.31.2.
+-- This file has been generated from package.yaml by hpack version 0.28.2.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 02459f2ca86576d164898f8679cc877c94a0e0a6a6d64a2bc9d9f6f97cc82adb
+-- hash: 5cb347d1118e7ccaeeafcb84337fe4dbcee875942dac74d8e0bd9daeb1a05c87
 
+cabal-version:  >= 1.10
 name:           polysemy-RandomFu
 version:        0.4.1.0
 synopsis:       Experimental, RandomFu effect and interpreters for polysemy
@@ -21,8 +20,8 @@ license-file:   LICENSE
 tested-with:    GHC ==8.6.4
 build-type:     Simple
 extra-source-files:
-    Readme.md
     ChangeLog.md
+    Readme.md
 
 source-repository head
   type: git
@@ -41,7 +40,7 @@ library
   ghc-options: -fplugin=Polysemy.Plugin
   build-depends:
       base >=4.7 && <5
-    , polysemy >=1.3.0 && <1.4
+    , polysemy >=1.3.0 && <1.5
     , polysemy-plugin >0.2.0 && <0.4
     , polysemy-zoo >=0.6.0 && <0.8
     , random-fu >=0.2.7.7 && <0.3.0.0
@@ -58,12 +57,10 @@ test-suite polysemy-RandomFu-test
       test
   default-extensions: DataKinds DeriveFunctor FlexibleContexts GADTs LambdaCase PolyKinds RankNTypes ScopedTypeVariables StandaloneDeriving TypeApplications TypeOperators TypeFamilies UnicodeSyntax
   ghc-options: -fplugin=Polysemy.Plugin -threaded -rtsopts -with-rtsopts=-N
-  build-tool-depends:
-      hspec-discover:hspec-discover >=2.0
   build-depends:
       base >=4.7 && <5
     , hspec >=2.0
-    , polysemy >=1.3.0 && <1.4
+    , polysemy >=1.3.0 && <1.5
     , polysemy-RandomFu
     , polysemy-plugin >0.2.0 && <0.4
     , polysemy-zoo
@@ -71,4 +68,6 @@ test-suite polysemy-RandomFu-test
     , random-source >=0.3.0.11 && <0.4.0.0
     , text >=1.1.0.0 && <1.3.0.0
     , vector >=0.7 && <0.13
+  build-tools:
+      hspec-discover >=2.0
   default-language: Haskell2010
